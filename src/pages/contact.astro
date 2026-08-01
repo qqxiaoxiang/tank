@@ -1,0 +1,116 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Contact Sales Manager Bob | GX-SANYU Aerobic Fermentor';
+const description = 'Contact Bob, Sales Manager & Product Manager at GX-SANYU, directly via WhatsApp or email for a free consultation and quote on the 11FFG-100 Intelligent Aerobic Fermentor. Global shipping and installation support.';
+const keywords = 'contact GX-SANYU, fermentor sales manager, Bob WhatsApp, aerobic fermentor quote, livestock waste treatment supplier, manure fermentation tank inquiry';
+
+const whatsappUrl = 'https://wa.me/8618477468950';
+const emailUrl = 'mailto:ailujiaxiang@gmail.com';
+
+const contactJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ContactPage',
+  name: 'Contact Sales Manager Bob - GX-SANYU',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'GX-SANYU',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      contactType: 'sales',
+      name: 'Bob - Sales Manager & Product Manager',
+      telephone: '+8618477468950',
+      email: 'ailujiaxiang@gmail.com',
+      availableLanguage: ['English', 'Chinese'],
+    },
+  },
+};
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(contactJsonLd)} />
+  <Header />
+  <main id="main-content">
+    <section class="about-hero-split" aria-labelledby="contact-hero-title">
+      <div class="shell ahs-grid">
+        <div>
+          <span class="eyebrow">Get in Touch</span>
+          <h1 id="contact-hero-title">Contact Sales Manager <em>Bob</em></h1>
+          <p>Reach out directly to Bob, our Sales Manager &amp; Product Manager, for a free consultation, detailed specifications, pricing, and installation guidance for the GX-SANYU 11FFG-100 Intelligent Aerobic Fermentor. We respond fast.</p>
+          <div style="margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;">
+            <a class="button light" href={whatsappUrl} target="_blank" rel="noopener">Chat on WhatsApp <span aria-hidden="true">→</span></a>
+            <a class="button" href={emailUrl} style="background:transparent; color:white; border-color:white;">Email Bob</a>
+          </div>
+        </div>
+        <div class="contact-cards cols-4" style="grid-template-columns:1fr; max-width:none;">
+          <div class="contact-card">
+            <span class="cc-icon" aria-hidden="true">👤</span>
+            <div class="cc-label">Sales &amp; Product Manager</div>
+            <div class="cc-name">Bob</div>
+            <div class="cc-value">Your dedicated expert for fermentor solutions</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="contact-channels-title">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">Direct Contact</span>
+          <h2 id="contact-channels-title">Reach Bob Directly</h2>
+          <p>No forms to fill out — contact Bob directly through your preferred channel. He handles inquiries for pig, cow, and poultry farms worldwide.</p>
+        </div>
+        <div class="contact-cards cols-4" style="grid-template-columns:repeat(3,1fr); max-width:920px; color:var(--ink);">
+          <a class="contact-card" href={whatsappUrl} target="_blank" rel="noopener" style="text-decoration:none; color:inherit; background:white; border:1px solid var(--line);">
+            <span class="cc-icon" aria-hidden="true" style="color:var(--green);">💬</span>
+            <div class="cc-label" style="color:var(--muted);">WhatsApp / WeChat</div>
+            <div class="cc-value" style="color:var(--ink);">+86 184 7746 8950</div>
+          </a>
+          <a class="contact-card" href={emailUrl} style="text-decoration:none; color:inherit; background:white; border:1px solid var(--line);">
+            <span class="cc-icon" aria-hidden="true" style="color:var(--green);">✉️</span>
+            <div class="cc-label" style="color:var(--muted);">Email</div>
+            <div class="cc-value" style="color:var(--ink);">ailujiaxiang@gmail.com</div>
+          </a>
+          <div class="contact-card" style="background:white; border:1px solid var(--line); color:inherit;">
+            <span class="cc-icon" aria-hidden="true" style="color:var(--green);">🏭</span>
+            <div class="cc-label" style="color:var(--muted);">Factory Address</div>
+            <div class="cc-value" style="color:var(--ink); font-size:0.92rem; line-height:1.5;">No.2 Guangxing Road, Shating Taihe Town, Baiyun Guangzhou, China (510540)</div>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:40px;">
+          <a class="button primary" href={whatsappUrl} target="_blank" rel="noopener">Contact Sales Manager Bob on WhatsApp <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="background:var(--cream);" aria-labelledby="why-contact-title">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">Why Talk to Bob</span>
+          <h2 id="why-contact-title">A Direct Line to a Product Expert</h2>
+          <p>When you contact Bob, you're speaking directly with the product manager — not a call center. Get straight answers on specs, customization, shipping, and pricing.</p>
+        </div>
+        <div class="advantages-grid">
+          <article class="advantage-card">
+            <span class="adv-number" aria-hidden="true">01</span>
+            <h3>Fast Response</h3>
+            <p>Bob replies to WhatsApp and email inquiries quickly — usually within hours during business days, worldwide.</p>
+          </article>
+          <article class="advantage-card">
+            <span class="adv-number" aria-hidden="true">02</span>
+            <h3>Tailored Solution</h3>
+            <p>Share your farm type, capacity, and location. Bob recommends the right configuration and shares detailed specifications.</p>
+          </article>
+          <article class="advantage-card">
+            <span class="adv-number" aria-hidden="true">03</span>
+            <h3>Global Support</h3>
+            <p>Worldwide shipping and installation support for pig, cow, and poultry operations of any scale.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

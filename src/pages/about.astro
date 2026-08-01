@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'About Us | 30+ Years of Livestock Environmental Solutions';
+const description = 'Guangzhou Guangxing Sanyu Environmental Protection Equipment Co., Ltd. — a global leader in organic waste treatment with 30+ years of history, 3 production bases, and exports to 50+ countries. Manufacturer of the 11FFG-100 Intelligent Aerobic Fermentor.';
+const keywords = 'Guangxing Sanyu, livestock environmental equipment manufacturer, aerobic fermentor supplier, organic waste treatment company, Guangzhou equipment factory, CAAA poultry enterprise, GASME R&D center';
+
+const orgData = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Guangzhou Guangxing Sanyu Environmental Protection Equipment Co., Ltd.',
+  alternateName: 'GX-SANYU',
+  url: Astro.site,
+  logo: 'https://res.cloudinary.com/dfcq7iwma/image/upload/v1785565271/logo_s5bp0f.png',
+  description,
+  foundingDate: '1990',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'No.2 Guangxing Road, Shating Taihe Town, Baiyun',
+    addressLocality: 'Guangzhou',
+    addressRegion: 'Guangdong',
+    postalCode: '510540',
+    addressCountry: 'CN',
+  },
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'sales',
+    name: 'Bob - Sales & Product Manager',
+    telephone: '+8618477468950',
+    email: 'ailujiaxiang@gmail.com',
+    availableLanguage: ['English', 'Chinese'],
+  },
+};
+
+const bases = [
+  { label: 'Base 1', name: 'Guangzhou Headquarters', area: '44,000', unit: 'm²' },
+  { label: 'Base 2', name: 'Guangdong Xinfeng Base', area: '300,000', unit: 'm²' },
+  { label: 'Base 3', name: 'Hebei Guangping Base', area: '192,000', unit: 'm²' },
+];
+
+const awards = [
+  'GASME Animal Husbandry Equipment R&D Center',
+  'The National High-Tech Enterprise',
+  'The Vice-chairman Enterprise of Poultry Branch of CAAA',
+  'Five-star Pioneer Enterprise of China Industry',
+  'AAA Credit Enterprise of Chinese Foreign Trade',
+];
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(orgData)} />
+  <Header />
+
+  <main id="main-content">
+    <!-- 1. Hero Section -->
+    <section class="about-hero-split" aria-labelledby="about-hero-title">
+      <div class="shell ahs-grid">
+        <div>
+          <span class="eyebrow">About GX-SANYU</span>
+          <h1 id="about-hero-title">30+ Years of Excellence in <em>Livestock Environmental Solutions</em></h1>
+          <p>Guangzhou Guangxing Sanyu Environmental Protection Equipment Co., Ltd. is a global leader in organic waste treatment, exporting to over 50 countries and regions.</p>
+          <div style="margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;">
+            <a class="button light" href="#contact">Contact Sales Manager Bob</a>
+            <a class="button" href="#manufacturing" style="background:transparent; color:white; border-color:white;">Our Manufacturing Power</a>
+          </div>
+        </div>
+        <div>
+          <img src="https://res.cloudinary.com/dfcq7iwma/image/upload/v1785572396/03_nw7udh.png" alt="GX-SANYU industrial-scale aerobic fermentor installation at a large livestock farm outdoor scene" width="720" height="540" loading="eager" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Company Overview & Manufacturing Power -->
+    <section class="section" id="manufacturing" aria-labelledby="footprint-title">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">Manufacturing Power</span>
+          <h2 id="footprint-title">Our Global Manufacturing Footprint</h2>
+          <p>Guangxing Group has over 30 years of history, comprises 6 companies, and focuses on complete sets of automatic raising equipment. Through strategic technical cooperation with <strong>Sanyu of Japan</strong>, we developed the GX-SANYU aerobic fermentor line — engineered to international standards and exported worldwide.</p>
+        </div>
+        <div class="metrics-grid">
+          {bases.map((b) => (
+            <article class="metric-card">
+              <div class="mc-label">{b.label}</div>
+              <div class="mc-name">{b.name}</div>
+              <div><span class="mc-area">{b.area}</span> <span class="mc-unit">{b.unit}</span></div>
+            </article>
+          ))}
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; margin-top:20px;">
+          <div class="metric-card" style="text-align:center;">
+            <div class="mc-area" style="font-size:2.4rem;">30+ <span class="mc-unit">years</span></div>
+            <div class="mc-label" style="margin-top:8px;">Industry History</div>
+          </div>
+          <div class="metric-card" style="text-align:center;">
+            <div class="mc-area" style="font-size:2.4rem;">6</div>
+            <div class="mc-label" style="margin-top:8px;">Group Companies</div>
+          </div>
+          <div class="metric-card" style="text-align:center;">
+            <div class="mc-area" style="font-size:2.4rem;">50+ <span class="mc-unit">countries</span></div>
+            <div class="mc-label" style="margin-top:8px;">Export Markets</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Awards, Honors & Certifications -->
+    <section class="section" style="background:var(--cream);" aria-labelledby="awards-title">
+      <div class="shell authority-inner">
+        <div>
+          <img src="https://res.cloudinary.com/dfcq7iwma/image/upload/v1785572397/gasme_s7i9h5.png" alt="GX-SANYU GASME and national high-tech enterprise certifications and industry honors" width="640" height="480" loading="lazy" decoding="async" />
+        </div>
+        <div>
+          <span class="eyebrow">Certifications &amp; Honors</span>
+          <h2 id="awards-title">Industry-Recognized Excellence</h2>
+          <p>Our commitment to R&amp;D and quality has earned recognition from national industry associations and trade authorities — a guarantee of reliability for international B2B buyers.</p>
+          <div class="awards-grid">
+            {awards.map((a, i) => (
+              <article class="award-card">
+                <span class="ac-badge" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span>
+                <span class="ac-title">{a}</span>
+              </article>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Our Flagship Technology & Mission -->
+    <section class="mission-section" aria-labelledby="mission-title">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">Technology &amp; Mission</span>
+          <h2 id="mission-title">Pioneering Sustainable Agriculture</h2>
+          <p>Our mission is to transform organic waste into high-quality fertilizer, promoting a circular economy for livestock farms worldwide. Our core product — the <strong>11FFG-100 Intelligent Aerobic Fermentor</strong> — reduces CO₂ emissions equivalent to <strong>1,000 pine trees</strong> annually through its patented heat-recovery system.</p>
+        </div>
+        <div class="mission-images">
+          <figure>
+            <img src="https://res.cloudinary.com/dfcq7iwma/image/upload/v1785572398/manure_fermentation_tank_gam0fw.png" alt="GX-SANYU 11FFG-100 Intelligent Aerobic Fermentor front view of industrial in-vessel composter" width="640" height="480" loading="lazy" decoding="async" />
+            <figcaption>11FFG-100 Intelligent Aerobic Fermentor — flagship product</figcaption>
+          </figure>
+          <figure>
+            <img src="https://res.cloudinary.com/dfcq7iwma/image/upload/v1785572398/systemt_03_r2zm1z.png" alt="Internal mechanics of GX-SANYU aerobic fermentor showing stainless steel shaft and blades" width="640" height="480" loading="lazy" decoding="async" />
+            <figcaption>Internal mechanics — 304 stainless steel shaft &amp; blades</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Connect With Our Experts (Contact CTA) -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">Contact Us</span>
+          <h2 id="contact-title">Ready to Upgrade Your Farm's Environmental Infrastructure?</h2>
+          <p>Reach out to our global sales and engineering team.</p>
+        </div>
+        <div class="contact-cards cols-4">
+          <div class="contact-card">
+            <span class="cc-icon" aria-hidden="true">👤</span>
+            <div class="cc-label">Sales &amp; Product Manager</div>
+            <div class="cc-name">Bob</div>
+          </div>
+          <div class="contact-card">
+            <span class="cc-icon" aria-hidden="true">💬</span>
+            <div class="cc-label">WhatsApp / WeChat</div>
+            <div class="cc-value">
+              <a href="https://wa.me/8618477468950" target="_blank" rel="noopener">+86 184 7746 8950</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span class="cc-icon" aria-hidden="true">✉️</span>
+            <div class="cc-label">Email</div>
+            <div class="cc-value">
+              <a href="mailto:ailujiaxiang@gmail.com">ailujiaxiang@gmail.com</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span class="cc-icon" aria-hidden="true">🏭</span>
+            <div class="cc-label">Factory Address</div>
+            <div class="cc-value" style="font-size:0.95rem; line-height:1.5;">No.2 Guangxing Road, Shating Taihe Town, Baiyun Guangzhou, China<br />(Postcode: 510540)</div>
+          </div>
+        </div>
+        <div style="margin-top:48px; border-radius:12px; overflow:hidden; box-shadow:0 20px 60px rgba(0,0,0,0.3);">
+          <img src="https://res.cloudinary.com/dfcq7iwma/image/upload/v1785572396/05_zkodjl.png" alt="GX-SANYU aerobic fermentor field installation scene at a commercial poultry farm" width="1280" height="480" loading="lazy" decoding="async" style="width:100%; display:block;" />
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

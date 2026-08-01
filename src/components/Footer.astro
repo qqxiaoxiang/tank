@@ -1,0 +1,42 @@
+---
+const logoURL = 'https://res.cloudinary.com/dfcq7iwma/image/upload/v1785565271/logo_s5bp0f.png';
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <img src={logoURL} alt="GX-SANYU logo" width="160" height="42" loading="lazy" decoding="async" />
+      <p>Manufacturer of intelligent aerobic fermentors for livestock waste treatment and organic fertilizer production.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Product navigation">
+      <h4>Product</h4>
+      <a href="/products/gx-sanyu-11ffg-100">GX-SANYU 11FFG-100</a>
+      <a href="/solutions/pig-manure-fermentation">Pig Manure Treatment</a>
+      <a href="/solutions/cow-manure-fermentation">Cow Manure Treatment</a>
+      <a href="/solutions/chicken-manure-fermentation">Chicken Manure Treatment</a>
+      <a href="/aerobic-fermentor-vs-dryer">Fermentor vs Dryer</a>
+    </nav>
+    <nav class="footer-nav" aria-label="Company navigation">
+      <h4>Company</h4>
+      <a href="/about">About Us</a>
+      <a href="/cases">Customer Cases</a>
+      <a href="/faq">FAQ</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <div class="footer-contact">
+      <h4>Get in Touch</h4>
+      <p>Looking for a reliable fermentor solution for your farm?</p>
+      <a class="button primary small" href="https://wa.me/8618477468950" target="_blank" rel="noopener">Contact Bob</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="shell footer-bottom-inner">
+      <p>&copy; {year} GX-SANYU. All rights reserved.</p>
+      <div class="footer-legal">
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Service</a>
+      </div>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,44 @@
+---
+const base = import.meta.env.BASE_URL;
+const logoURL = 'https://res.cloudinary.com/dfcq7iwma/image/upload/v1785565271/logo_s5bp0f.png';
+---
+
+<header class="site-header">
+  <div class="shell nav-wrap">
+    <a class="brand" href={base} aria-label="GX-SANYU - Intelligent Aerobic Fermentor">
+      <img src={logoURL} alt="GX-SANYU logo" width="180" height="48" loading="eager" decoding="async" />
+    </a>
+    <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="mobile-nav">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="main-nav" id="mobile-nav" aria-label="Main navigation">
+      <a href="/">Home</a>
+      <a href="/#features">Features</a>
+      <a href="/#how-it-works">How it Works</a>
+      <a href="/#tech-specs">Tech Specs</a>
+      <a href="/#applications">Applications</a>
+      <a href="/aerobic-fermentor-vs-dryer">Comparison</a>
+      <a href="/contact">Contact</a>
+      <a class="nav-cta" href="https://wa.me/8618477468950" target="_blank" rel="noopener">Contact Bob</a>
+    </nav>
+  </div>
+</header>
+
+<script is:inline>
+  (function () {
+    const toggle = document.getElementById('nav-toggle');
+    const nav = document.getElementById('mobile-nav');
+    if (!toggle || !nav) return;
+    toggle.addEventListener('click', function () {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('open', !expanded);
+    });
+    nav.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', function () {
+        nav.classList.remove('open');
+        toggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  })();
+</script>

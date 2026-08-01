@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = 'Cow Manure Fermentation Solution | GX-SANYU';
+const description = 'Professional cow manure treatment solution for dairy and beef farms. Convert cow dung into high-quality organic fertilizer with GX-SANYU aerobic fermentors.';
+const keywords = 'cow manure fermentation, dairy farm waste treatment, cow dung fertilizer, aerobic fermentor for cow manure, cattle waste management';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Cow Manure Fermentation Solution',
+  provider: { '@type': 'Organization', name: 'GX-SANYU' },
+  description,
+  areaServed: 'Worldwide',
+};
+
+const benefits = [
+  { title: 'Large Capacity', text: 'Designed to handle high-volume cow manure from large dairy operations.' },
+  { title: 'Fiber Decomposition', text: 'Specialized fermentation process efficiently breaks down cow fiber content.' },
+  { title: 'High-Quality Output', text: 'Produces nutrient-dense organic fertilizer ideal for crop production.' },
+  { title: 'Water Saving', text: 'Closed-loop system with minimal water consumption compared to traditional methods.' },
+];
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <Header />
+  <main id="main-content">
+    <section class="solution-hero">
+      <div class="shell">
+        <span class="eyebrow" style="color:rgba(255,255,255,0.85);">Solutions</span>
+        <h1>Cow Manure Fermentation Solution</h1>
+        <p>Efficient treatment of cow and dairy farm waste. GX-SANYU fermentors handle the high-volume, high-fiber nature of cow manure with ease.</p>
+        <div style="margin-top:28px; display:flex; gap:16px; flex-wrap:wrap;">
+          <a class="button light" href="/products/gx-sanyu-11ffg-100">View the Fermentor</a>
+          <a class="button" href="https://wa.me/8618477468950" target="_blank" rel="noopener" style="background:transparent; color:white; border-color:white;">Contact Sales Manager Bob</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell feature-split">
+        <div>
+          <img src="https://images.unsplash.com/photo-1605280263929-1c9c3b3f1d48?w=600&h=500&fit=crop" alt="Cow manure fermentation for dairy farms" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div>
+          <span class="eyebrow">The Challenge</span>
+          <h2>Sustainable Dairy Waste Management</h2>
+          <p>Cow farms, especially large dairy operations, produce massive volumes of manure with high fiber content. Traditional open composting takes months and creates odor and runoff issues.</p>
+          <p>GX-SANYU's sealed vertical fermentor accelerates the process to 7 days while containing odors and producing a consistent, high-quality fertilizer.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section usp-section">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">Key Benefits</span>
+          <h2>Advantages for Cow Farms</h2>
+        </div>
+        <div class="usp-grid">
+          {benefits.map((b) => (
+            <article class="usp-card">
+              <span class="usp-icon">✓</span>
+              <h3>{b.title}</h3>
+              <p>{b.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-split reverse">
+      <div>
+        <span class="eyebrow">Specifications</span>
+        <h2>Tailored for Dairy Operations</h2>
+        <ul class="feature-list">
+          <li>Handles high-volume cow manure (10+ m³ per batch)</li>
+          <li>Effectively decomposes fiber-rich cow waste</li>
+          <li>Heat exchanger system works efficiently in all climates</li>
+          <li>Automated loading and unloading for labor saving</li>
+          <li>Produces organic fertilizer with balanced NPK ratio</li>
+        </ul>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=600&h=500&fit=crop" alt="Dairy farm waste treatment system" width="600" height="500" loading="lazy" decoding="async" />
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="shell cta-box">
+        <h2 style="color:white;">Optimizing Your Dairy Farm Operations?</h2>
+        <p style="color:rgba(255,255,255,0.85); margin-bottom:24px;">Contact us for a customized cow manure treatment solution. We serve farms worldwide.</p>
+        <a class="button light" href="https://wa.me/8618477468950" target="_blank" rel="noopener">Contact Sales Manager Bob</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

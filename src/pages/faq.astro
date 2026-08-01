@@ -1,0 +1,74 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'FAQ | GX-SANYU Aerobic Fermentor Frequently Asked Questions';
+const description = 'Answers to frequently asked questions about GX-SANYU aerobic fermentors, including specifications, installation, operation, maintenance, and organic fertilizer quality.';
+const keywords = 'fermentor FAQ, GX-SANYU questions, aerobic fermentor specifications, organic fertilizer quality, fermentor maintenance';
+
+const faqs = [
+  { q: 'What types of waste can the GX-SANYU 11FFG-100 handle?', a: 'Our fermentor is designed for pig manure, cow manure, chicken manure, and other agricultural and domestic organic wastes. It handles waste with 60% moisture content efficiently.' },
+  { q: 'How long is the fermentation cycle?', a: 'The average fermentation cycle is 7 days, converting waste from 60% moisture to 30-40% moisture organic fertilizer. Continuous operation allows constant processing.' },
+  { q: 'What is the energy consumption?', a: 'Thanks to our patented heat exchanger, the system saves 46,000 kWh of energy annually — equivalent to the CO₂ absorption of 1,000 pine trees. No need for external fuel sources.' },
+  { q: 'What is the equipment lifespan?', a: 'With proper maintenance, the GX-SANYU 11FFG-100 has a lifespan of over 10 years. All critical components use 304 stainless steel, NACHI pumps, and ABB/Siemens motors.' },
+  { q: 'Is the fermentor easy to operate?', a: 'Yes. The Mitsubishi PLC control system provides fully automated operation with forklift loading, one-click remote control for loading and unloading, and a comprehensive fault alarm system.' },
+  { q: 'What is the organic fertilizer quality?', a: 'The output is high-quality organic fertilizer with reduced moisture (30-40%), stabilized nutrients, and eliminated pathogens. It can be sold commercially or used on your own crops.' },
+  { q: 'How much space does the fermentor require?', a: 'The vertical design minimizes footprint. Contact us for specific space requirements based on your capacity needs and site conditions.' },
+  { q: 'Do you provide installation and training?', a: 'Yes. We provide complete installation guidance, commissioning, operator training, and ongoing technical support. Global logistics and on-site support available.' },
+  { q: 'What is the warranty period?', a: 'Standard warranty is 12 months from installation. Extended warranty options and maintenance contracts are available. All critical components are covered.' },
+  { q: 'Can I install multiple units for larger operations?', a: 'Absolutely. Many of our clients operate 3-10+ units for large-scale operations. We provide system design for integrated multi-unit installations.' },
+  { q: 'How is the fermentor shipped?', a: 'Equipment is shipped via sea freight in standard containers. We handle all export documentation and can arrange delivery to your port or factory.' },
+  { q: 'Are spare parts readily available?', a: 'Yes. We maintain spare parts inventory and can ship consumables and replacement parts worldwide. Critical spare parts list is provided with each installation.' },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a,
+    },
+  })),
+};
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  <Header />
+  <main id="main-content">
+    <section class="about-hero">
+      <div class="shell" style="text-align:center;">
+        <span class="eyebrow">Frequently Asked Questions</span>
+        <h1>Answers to Your Questions</h1>
+        <p>Everything you need to know about GX-SANYU aerobic fermentors, from specifications to operation and maintenance.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="faq-list">
+          {faqs.map((f) => (
+            <div class="faq-item">
+              <h3 class="faq-question">{f.q}</h3>
+              <div class="faq-answer">{f.a}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="shell cta-box">
+        <h2 style="color:white;">Still Have Questions?</h2>
+        <p style="color:rgba(255,255,255,0.85); margin-bottom:16px;">Our team is ready to provide detailed answers and technical consultations.</p>
+        <p style="color:rgba(255,255,255,0.85); margin-bottom:24px; font-size:0.95rem;">Comparing with a poultry manure dryer? Read our in-depth <a href="/aerobic-fermentor-vs-dryer" style="color:var(--lime); font-weight:600; text-decoration:underline;">aerobic fermentor vs dryer comparison guide</a>.</p>
+        <a class="button light" href="https://wa.me/8618477468950" target="_blank" rel="noopener">Contact Sales Manager Bob</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

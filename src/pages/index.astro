@@ -1,0 +1,239 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Industrial Aerobic Fermentor | Poultry Manure to Organic Fertilizer in 7 Days';
+const description = 'GX-SANYU 11FFG-100 Intelligent Aerobic Fermentor & In-vessel Composting System for large-scale livestock farms. Eco-friendly, automated, high-efficiency manure fermentation equipment. Contact Bob today.';
+const keywords = 'aerobic fermentor, in-vessel composter, poultry manure fermentation, organic fertilizer equipment, livestock waste treatment, industrial composting system, GX-SANYU 11FFG-100';
+
+// Structured data
+const orgData = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'GX-SANYU',
+  url: Astro.site,
+  logo: 'https://res.cloudinary.com/dfcq7iwma/image/upload/v1785565271/logo_s5bp0f.png',
+  description,
+  contactPoint: {
+    '@type': 'ContactPoint',
+    contactType: 'sales',
+    name: 'Bob - Sales Manager & Product Manager',
+    telephone: '+8618477468950',
+    email: 'ailujiaxiang@gmail.com',
+    availableLanguage: ['English', 'Chinese'],
+  },
+};
+
+const productData = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'GX-SANYU 11FFG-100 Intelligent Aerobic Fermentor',
+  image: 'https://res.cloudinary.com/dfcq7iwma/image/upload/v1785572398/manure_fermentation_tank_gam0fw.png',
+  description: 'Industrial aerobic fermentor and in-vessel composting system for large-scale livestock farms. Converts poultry, pig, and cow manure into organic fertilizer in 7 days.',
+  brand: { '@type': 'Brand', name: 'GX-SANYU' },
+  category: 'Industrial Composting Equipment',
+  offers: {
+    '@type': 'Offer',
+    availability: 'https://schema.org/InStock',
+    url: Astro.site + 'contact',
+  },
+};
+
+const advantages = [
+  {
+    number: '01',
+    title: 'Eco-Friendly & Energy Saving',
+    text: 'Special heat exchanger recovers waste heat, saving up to 46,000 kW of electricity per year — equivalent to the CO₂ absorption of 1,000 trees. Spray tower water-washing deodorization removes ammonia and harmful gases.',
+  },
+  {
+    number: '02',
+    title: 'High Durability (10+ Years)',
+    text: '3-layer thermal insulation tank with 304 stainless steel interior, main shaft, and blades. Powered by NACHI hydraulic oil pump and ABB/Siemens grade motors for 10+ year service life under continuous operation.',
+  },
+  {
+    number: '03',
+    title: 'Easy Operation',
+    text: 'Centralized Mitsubishi PLC controller enables full automation. One-key remote feeding and discharging, forklift direct loading, and a comprehensive fault alarm system for worry-free operation.',
+  },
+];
+
+const authorityPoints = [
+  'Trusted by large-scale layer farms from 10,000 up to 920,000 birds',
+  'Multi-unit deployments — up to 10 sets at a single farm',
+  'Cooperated with Sanyu of Japan — independent intellectual property rights',
+  'Strict quality control on stainless steel, NACHI, and ABB/Siemens components',
+  'Proven continuous operation in harsh farm environments worldwide',
+];
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(orgData)} />
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(productData)} />
+  <Header />
+
+  <main id="main-content">
+    <!-- 1. Hero Section -->
+    <section class="hero-product" aria-labelledby="hero-title">
+      <div class="shell hero-product-grid">
+        <div class="hero-content">
+          <span class="eyebrow">GX-SANYU 11FFG-100 · Intelligent Aerobic Fermentor</span>
+          <h1 id="hero-title">Transform Poultry Manure into <em>High-Quality Organic Fertilizer</em> in 7 Days</h1>
+          <p class="hero-subtitle">Industrial Aerobic Fermentor &amp; In-vessel Composting System designed for large-scale livestock farms. Eco-friendly, automated, and high-efficiency.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="https://wa.me/8618477468950" target="_blank" rel="noopener">Contact Sales Manager Bob <span aria-hidden="true">→</span></a>
+            <a class="button secondary" href="#tech-specs">View Specs</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="https://res.cloudinary.com/dfcq7iwma/image/upload/v1785572398/manure_fermentation_tank_gam0fw.png" alt="GX-SANYU 11FFG-100 Industrial In-vessel Composter and Poultry Manure Aerobic Fermentor" width="720" height="540" loading="eager" decoding="async" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Core Advantages -->
+    <section class="section" id="features" aria-labelledby="advantages-title">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">Core Advantages</span>
+          <h2 id="advantages-title">Why Farms Choose GX-SANYU</h2>
+          <p>Three engineering breakthroughs that make our aerobic fermentor the reliable choice for industrial-scale waste-to-fertilizer conversion.</p>
+        </div>
+        <div class="advantages-grid">
+          {advantages.map((a) => (
+            <article class="advantage-card">
+              <span class="adv-number" aria-hidden="true">{a.number}</span>
+              <h3>{a.title}</h3>
+              <p>{a.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Working Principle & Workflow -->
+    <section class="workflow" id="how-it-works" aria-labelledby="workflow-title">
+      <div class="shell workflow-grid">
+        <div>
+          <img src="https://res.cloudinary.com/dfcq7iwma/image/upload/v1785572397/liucheng_ehpy46.png" alt="Continuous flow workflow diagram of aerobic fermentation from livestock waste to organic fertilizer" width="640" height="480" loading="lazy" decoding="async" />
+        </div>
+        <div>
+          <span class="eyebrow">Working Principle</span>
+          <h2 id="workflow-title">Continuous Flow: From Waste to Fertilizer</h2>
+          <p>Input organic waste with <strong>60% moisture daily</strong>. The sealed vertical tank maintains optimal aerobic conditions while the patented heat exchanger recycles fermentation heat. In an average of <strong>7 days</strong>, you obtain high-quality organic fertilizer with <strong>30-40% moisture</strong>, ready for bagging, sale, or land application.</p>
+          <div class="workflow-stats">
+            <div class="workflow-stat">
+              <div class="ws-value">60%</div>
+              <div class="ws-label">Input moisture</div>
+            </div>
+            <div class="workflow-stat">
+              <div class="ws-value">7 days</div>
+              <div class="ws-label">Avg. cycle</div>
+            </div>
+            <div class="workflow-stat">
+              <div class="ws-value">30-40%</div>
+              <div class="ws-label">Output moisture</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Technical Structure & Components -->
+    <section class="tech-structure" id="tech-specs" aria-labelledby="tech-title">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">Technical Structure</span>
+          <h2 id="tech-title">Engineered for Performance</h2>
+          <p>Precision-engineered internal structure and industrial-grade components ensure stable, continuous operation and a 10+ year service life.</p>
+        </div>
+        <div class="tech-images">
+          <figure class="tech-figure">
+            <img src="https://res.cloudinary.com/dfcq7iwma/image/upload/v1785572398/systemt_03_r2zm1z.png" alt="Internal structure of GX-SANYU aerobic fermentor showing 3-layer insulated tank, stainless steel shaft and blades" width="640" height="480" loading="lazy" decoding="async" />
+            <figcaption>Internal Structure — 3-layer insulated tank with 304 stainless steel interior</figcaption>
+          </figure>
+          <figure class="tech-figure">
+            <img src="https://res.cloudinary.com/dfcq7iwma/image/upload/v1785572398/sysem_pw1cjy.png" alt="Industrial components of aerobic fermentor including NACHI hydraulic oil pump and ABB Siemens motor drive system" width="640" height="480" loading="lazy" decoding="async" />
+            <figcaption>Drive System — NACHI oil pump &amp; ABB/Siemens grade motors</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Field Applications & Real Scenarios -->
+    <section class="applications" id="applications" aria-labelledby="applications-title">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">Field Applications</span>
+          <h2 id="applications-title">Proven in Large-Scale Layer Farms</h2>
+          <p>Real installations running continuously on commercial poultry operations — from 10,000-bird farms to 920,000-bird mega layer farms with multi-unit deployments.</p>
+        </div>
+        <div class="gallery-2col">
+          <figure>
+            <img src="https://res.cloudinary.com/dfcq7iwma/image/upload/v1785572396/05_zkodjl.png" alt="GX-SANYU aerobic fermentor installation at a large-scale commercial layer poultry farm" width="640" height="360" loading="lazy" decoding="async" />
+            <figcaption>Multi-unit installation at a commercial layer farm</figcaption>
+          </figure>
+          <figure>
+            <img src="https://res.cloudinary.com/dfcq7iwma/image/upload/v1785572396/03_nw7udh.png" alt="On-site aerobic fermentation equipment processing poultry manure into organic fertilizer" width="640" height="360" loading="lazy" decoding="async" />
+            <figcaption>On-site waste-to-fertilizer conversion in operation</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. Authority & Trust -->
+    <section class="authority" aria-labelledby="authority-title">
+      <div class="shell authority-inner">
+        <div>
+          <img src="https://res.cloudinary.com/dfcq7iwma/image/upload/v1785572397/gasme_s7i9h5.png" alt="GX-SANYU industry certifications and quality assurance for aerobic fermentation equipment" width="640" height="480" loading="lazy" decoding="async" />
+        </div>
+        <div>
+          <span class="eyebrow">Authority &amp; Trust</span>
+          <h2 id="authority-title">Industry Certified Excellence</h2>
+          <p>Backed by Japanese Sanyu technology cooperation and validated across hundreds of farms, GX-SANYU delivers the reliability and performance international B2B buyers demand.</p>
+          <ul class="authority-list">
+            {authorityPoints.map((p) => (<li>{p}</li>))}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. Contact & CTA Section -->
+    <section class="contact-section" id="contact" aria-labelledby="contact-title">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">Get in Touch</span>
+          <h2 id="contact-title">Talk to Our Equipment Expert Today</h2>
+          <p>Get a tailored quote, technical consultation, and shipping details for your farm. We respond fast.</p>
+        </div>
+        <div class="contact-cards">
+          <div class="contact-card">
+            <span class="cc-icon" aria-hidden="true">👤</span>
+            <div class="cc-label">Your Contact</div>
+            <div class="cc-name">Bob</div>
+            <div class="cc-value">Sales Manager &amp; Product Manager</div>
+          </div>
+          <div class="contact-card">
+            <span class="cc-icon" aria-hidden="true">💬</span>
+            <div class="cc-label">WhatsApp / WeChat</div>
+            <div class="cc-value">
+              <a href="https://wa.me/8618477468950" target="_blank" rel="noopener">+86 184 7746 8950</a>
+            </div>
+          </div>
+          <div class="contact-card">
+            <span class="cc-icon" aria-hidden="true">✉️</span>
+            <div class="cc-label">Email</div>
+            <div class="cc-value">
+              <a href="mailto:ailujiaxiang@gmail.com">ailujiaxiang@gmail.com</a>
+            </div>
+          </div>
+        </div>
+        <div style="text-align:center; margin-top:40px;">
+          <a class="button light" href="https://wa.me/8618477468950" target="_blank" rel="noopener">Contact Sales Manager Bob <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</BaseLayout>

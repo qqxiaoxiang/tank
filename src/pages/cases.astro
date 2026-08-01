@@ -1,0 +1,69 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'Customer Cases | GX-SANYU Fermentor Projects Worldwide';
+const description = 'Real customer cases of GX-SANYU aerobic fermentors installed at layer farms, pig farms, and dairy operations. Proven performance from 10,000 to 920,000 animals.';
+const keywords = 'fermentor customer cases, layer farm project, pig farm waste treatment case, GX-SANYU installations, organic fertilizer project references';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Customer Cases',
+  description,
+};
+
+const cases = [
+  { tag: '920,000 Layer Farm', title: 'Southeast Asia Layer Farm', location: 'Southeast Asia', scale: '920,000 laying hens', units: 10, img: 'https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=500&h=350&fit=crop' },
+  { tag: '100,000 Layer Farm', title: 'Medium-Scale Egg Producer', location: 'East Asia', scale: '100,000 laying hens', units: 3, img: 'https://images.unsplash.com/photo-1605280263929-1c9c3b3f1d48?w=500&h=350&fit=crop' },
+  { tag: '5,000 Head Pig Farm', title: 'Commercial Pig Operation', location: 'East Asia', scale: '5,000 head', units: 2, img: 'https://images.unsplash.com/photo-1500595046743-cd271d694d30?w=500&h=350&fit=crop' },
+  { tag: 'Dairy Farm', title: 'Large Dairy Operation', location: 'Southeast Asia', scale: '2,000 head cattle', units: 4, img: 'https://images.unsplash.com/photo-1516467508483-a7212febe31a?w=500&h=350&fit=crop' },
+  { tag: '30,000 Layer Farm', title: 'Growing Poultry Business', location: 'South Asia', scale: '30,000 laying hens', units: 1, img: 'https://images.unsplash.com/photo-1563281577-a7be47e20061?w=500&h=350&fit=crop' },
+  { tag: '10,000 Layer Farm', title: 'Family-Run Egg Farm', location: 'East Asia', scale: '10,000 laying hens', units: 1, img: 'https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=500&h=350&fit=crop' },
+];
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <Header />
+  <main id="main-content">
+    <section class="about-hero">
+      <div class="shell" style="text-align:center;">
+        <span class="eyebrow">Customer Success</span>
+        <h1>Proven Performance Worldwide</h1>
+        <p>From small family farms to the largest commercial layer operations, GX-SANYU fermentors are trusted to deliver reliable waste treatment and organic fertilizer production.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="cases-grid">
+          {cases.map((c) => (
+            <article class="case-card">
+              <img src={c.img} alt={c.title} width="500" height="350" loading="lazy" decoding="async" />
+              <div class="case-card-body">
+                <span class="case-tag">{c.tag}</span>
+                <h3>{c.title}</h3>
+                <p>Location: {c.location}</p>
+                <div class="case-stats">
+                  <span><strong>{c.scale}</strong></span>
+                  <span>{c.units} unit{c.units > 1 ? 's' : ''} installed</span>
+                </div>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="shell cta-box">
+        <h2 style="color:white;">Want to Be Our Next Success Story?</h2>
+        <p style="color:rgba(255,255,255,0.85); margin-bottom:24px;">Contact us today for a personalized assessment of your farm's waste treatment needs.</p>
+        <a class="button light" href="https://wa.me/8618477468950" target="_blank" rel="noopener">Contact Sales Manager Bob</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>

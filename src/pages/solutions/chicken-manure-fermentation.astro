@@ -1,0 +1,101 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const title = 'Chicken Manure Fermentation Solution | GX-SANYU';
+const description = 'Professional chicken manure treatment for layer and broiler farms. Convert poultry waste into premium organic fertilizer with GX-SANYU aerobic fermentors.';
+const keywords = 'chicken manure fermentation, poultry waste treatment, layer farm fertilizer, chicken dung organic fertilizer, broiler farm waste management';
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'Chicken Manure Fermentation Solution',
+  provider: { '@type': 'Organization', name: 'GX-SANYU' },
+  description,
+  areaServed: 'Worldwide',
+};
+
+const benefits = [
+  { title: 'High Nitrogen Content', text: 'Chicken manure produces nitrogen-rich fertilizer highly valued by crop farmers.' },
+  { title: 'Pathogen Control', text: 'Aerobic fermentation effectively eliminates salmonella and other poultry pathogens.' },
+  { title: 'Large-Scale Ready', text: 'Proven on layer farms from 10,000 to 920,000 birds with multi-unit installations.' },
+  { title: 'Odor Reduction', text: 'Sealed system with deodorization tower eliminates ammonia and odor complaints.' },
+];
+---
+
+<BaseLayout title={title} description={description} keywords={keywords}>
+  <script is:inline type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <Header />
+  <main id="main-content">
+    <section class="solution-hero">
+      <div class="shell">
+        <span class="eyebrow" style="color:rgba(255,255,255,0.85);">Solutions</span>
+        <h1>Chicken Manure Fermentation Solution</h1>
+        <p>The #1 choice for layer and broiler farms. GX-SANYU fermentors are trusted by the largest poultry operations worldwide to convert chicken waste into premium organic fertilizer.</p>
+        <div style="margin-top:28px; display:flex; gap:16px; flex-wrap:wrap;">
+          <a class="button light" href="/products/gx-sanyu-11ffg-100">View the Fermentor</a>
+          <a class="button" href="https://wa.me/8618477468950" target="_blank" rel="noopener" style="background:transparent; color:white; border-color:white;">Contact Sales Manager Bob</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell feature-split">
+        <div>
+          <img src="https://images.unsplash.com/photo-1563281577-a7be47e20061?w=600&h=500&fit=crop" alt="Chicken manure fermentation for layer farms" width="600" height="500" loading="lazy" decoding="async" />
+        </div>
+        <div>
+          <span class="eyebrow">The Challenge</span>
+          <h2>Large-Scale Poultry Waste Management</h2>
+          <p>Commercial layer farms with hundreds of thousands of birds generate enormous volumes of chicken manure. Disposal is costly, environmentally challenging, and regulated by strict agricultural and environmental laws.</p>
+          <p>GX-SANYU provides a complete, closed-loop solution that turns this waste into a revenue stream through premium organic fertilizer production. Not sure between a fermentor and a dryer? Read our <a href="/aerobic-fermentor-vs-dryer" style="color:var(--green); font-weight:600; text-decoration:underline;">aerobic fermentor vs dryer comparison</a> to understand the key differences.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section usp-section">
+      <div class="shell">
+        <div class="section-heading">
+          <span class="kicker">Key Benefits</span>
+          <h2>Why Poultry Farmers Choose GX-SANYU</h2>
+        </div>
+        <div class="usp-grid">
+          {benefits.map((b) => (
+            <article class="usp-card">
+              <span class="usp-icon">✓</span>
+              <h3>{b.title}</h3>
+              <p>{b.text}</p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="feature-split">
+      <div>
+        <span class="eyebrow">Proven Track Record</span>
+        <h2>Trusted by Farms Up to 920,000 Laying Hens</h2>
+        <p>Our most notable installations include a 920,000-hen layer farm with 10 GX-SANYU fermentors running continuously. This demonstrates our ability to handle the largest-scale poultry operations with reliability and efficiency.</p>
+        <ul class="feature-list">
+          <li>10+ unit installations at major layer farms</li>
+          <li>Handle 10,000 to 920,000+ bird operations</li>
+          <li>Proven in Southeast Asia, with plans for global deployment</li>
+          <li>Consistent, year-round fertilizer production</li>
+        </ul>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1548550023-2bdb3c5beed7?w=600&h=500&fit=crop" alt="Large layer farm with GX-SANYU fermentors" width="600" height="500" loading="lazy" decoding="async" />
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="shell cta-box">
+        <h2 style="color:white;">Scale Your Poultry Farm Sustainably</h2>
+        <p style="color:rgba(255,255,255,0.85); margin-bottom:24px;">We provide multi-unit solutions for large-scale poultry operations. Contact us for a farm-specific assessment.</p>
+        <a class="button light" href="https://wa.me/8618477468950" target="_blank" rel="noopener">Contact Sales Manager Bob</a>
+      </div>
+    </section>
+  </main>
+  <Footer />
+</BaseLayout>
